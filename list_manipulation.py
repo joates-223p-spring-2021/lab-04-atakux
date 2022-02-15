@@ -14,7 +14,6 @@ import lists
 
 sports_teams = [lists.football_teams, lists.baseball_teams, lists.basketball_teams]
 
-
 #swaps out hot dogs for bratwurst in menu using listcomp
 menu = [food if food != "hot dogs" else "bratwurst" for food in lists.school_lunches]
 print(menu)
@@ -22,7 +21,7 @@ print(menu)
 
 #prints the questions and answers formatted into a sentence
 for questions, answers in zip(lists.questions, lists.answers):
-    print("What is your {0}? My {0} is {1}.".format(questions, answers))
+    print("What is your {0}? My {0} is {1}".format(questions, answers))
 
 
 #grab all the LA teams
