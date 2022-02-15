@@ -1,28 +1,55 @@
 # -*- coding: utf-8 -*-
 """
 
-johnwoates
+Angela DeLeo
 CPSC 223P-01
-Thu Jan 28, 2021
-joates@fullerton.edu
+Mon Jan 14, 2022
+atakux707@csu.fullerton.edu
 
 """
 
+#import lists file
 import lists
+
 
 sports_teams = [lists.football_teams, lists.baseball_teams, lists.basketball_teams]
 
-# Print out all the school lunches on the menu, but substitute bratwurst 
-# wherever you see hot dogs
-# Use list comprehension. Just print the list directly so the output will
-# include the brackets and quotations (['item 1', item 2' ... and so on])
+
+#swaps out hot dogs for bratwurst in menu using listcomp
+menu = [food if food != "hot dogs" else "bratwurst" for food in lists.school_lunches]
+print(menu)
 
 
-# Use zip to iterate over two lists at the same time
-# Print out questions and answers in a loop
-# Format them: "What is your <question>? My <question> is <answer>."
+#prints the questions and answers formatted into a sentence
+for questions, answers in zip(lists.questions, lists.answers):
+    print("What is your {0}? My {0} is {1}.".format(questions, answers))
 
 
-# Manipulate the nested lists of sports teams to print all teams from New York
-# and all teams from Los Angeles.  Just print the lists directly so the output will
-# include the brackets and quotations (['team 1', team 2' ... and so on])
+#grab all the LA teams
+losAngeles = "Los Angeles"
+LA = []
+for i in sports_teams[0]:
+    if losAngeles in i:
+        LA.append(i)
+for i in sports_teams[1]:
+    if losAngeles in i:
+        LA.append(i)
+for i in sports_teams[2]:
+    if losAngeles in i:
+        LA.append(i)
+print(LA)
+
+
+#grab all the NY teams
+newYork = "New York"
+NY = []
+for i in sports_teams[0]:
+    if newYork in i:
+        NY.append(i)
+for i in sports_teams[1]:
+    if newYork in i:
+        NY.append(i)
+for i in sports_teams[2]:
+    if newYork in i:
+        NY.append(i)
+print(NY)
